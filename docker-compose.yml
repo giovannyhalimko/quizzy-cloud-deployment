@@ -21,8 +21,6 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: &restart always
-    ports:
-      - "8000:80" # The 80 can be changed.
     depends_on: &depends
       - db
       - redis
@@ -38,7 +36,7 @@ services:
       # -- DON'T CHANGE TILL HERE ---
 
       # --- GENERAL CONFIG ---
-      ROOT_ADDRESS: "https://classquiz.de" # CHANGE IT (without a "/" at the end)
+      ROOT_ADDRESS: "https://quizzy.louisaldorio.com" # CHANGE IT (without a "/" at the end)
 
       # --- MAIL CONFIG ---
       MAIL_PORT: "587"
@@ -80,8 +78,8 @@ services:
   redis:
     image: redis:alpine
     restart: always
-    ports:
-        - "6379:6379" # The 6379 can be changed.
+    # ports:
+    #     - "6379:6379" # The 6379 can be changed.
     healthcheck:
       test: [ "CMD", "redis-cli","ping" ]
 
@@ -101,10 +99,11 @@ services:
   proxy:
     image: caddy:alpine
     restart: always
+    container_name: caddy_quizzy
     volumes:
       - ./Caddyfile-docker:/etc/caddy/Caddyfile
-    ports:
-      - "8001:8080" # The 8000 can be changed.
+    # ports:
+    #   - "8000:8080" # The 8000 can be changed.
   meilisearch:
     image: getmeili/meilisearch:v0.28.0
     restart: always
