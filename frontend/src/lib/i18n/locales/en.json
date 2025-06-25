@@ -104,6 +104,7 @@
 		"username": "Username",
 		"password": "Password",
 		"play": "Play",
+        "play_again": "Play again",
 		"edit": "Edit",
 		"delete": "Delete",
 		"public": "Public",

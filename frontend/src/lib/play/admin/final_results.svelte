@@ -15,6 +15,7 @@ SPDX-License-Identifier: MPL-2.0
 	export let show_final_results: boolean;
 	import { fly } from 'svelte/transition';
 	import confetti from 'canvas-confetti';
+    import GrayButton from '$lib/components/buttons/gray.svelte';
 
 	function sortObjectbyValue(obj) {
 		const ret = {};
@@ -67,7 +68,10 @@ SPDX-License-Identifier: MPL-2.0
 		{/each}
 	</div>
 	{#if data[username]}
-		<div class="fixed bottom-0 left-0 flex justify-center w-full mb-6">
+		<div class="fixed bottom-0 left-0 flex justify-center w-full mb-6 flex-col">
+			<div class="mx-auto p-2">
+                <GrayButton href="/play">{$t('words.play_again')}</GrayButton>
+            </div>
 			<div class="mx-auto p-2 border-[#B07156] border-4 rounded">
 				<p class="text-center">{$t('play_page.your_score', { score: data[username] })}</p>
 				{#each player_names as player, i}
