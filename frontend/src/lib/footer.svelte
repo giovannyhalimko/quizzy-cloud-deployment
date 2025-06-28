@@ -23,19 +23,6 @@ SPDX-License-Identifier: MPL-2.0
 				interpolation: { escapeValue: false }
 			})}
 			<br />
-
-			{@html $t('footer.donate', {
-				donate_link: `<a href='https://mawoka.eu/donate' target='_blank' class='underline text-blue-300 hover:text-blue-500 transition'>${$t(
-					'words.donating'
-				)}</a>`,
-				interpolation: { escapeValue: false }
-			})}
-			<a
-				href="https://mawoka.eu/donate"
-				target="_blank"
-				class="underline text-blue-300 hover:text-blue-500 transition"
-				>{$t('footer.more_details_here')}.</a
-			>
 		</p>
 	</div>
 	<div class="md:hidden block">

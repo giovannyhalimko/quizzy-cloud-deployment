@@ -62,7 +62,7 @@ SPDX-License-Identifier: MPL-2.0
 				<a
 					target="_blank"
 					class="btn-nav flex items-center gap-1"
-					href="https://github.com/giovannyhalimko/quizzy"
+					href="https://github.com/giovannyhalimko/quizzy-cloud-deployment"
 					>GitHub
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
